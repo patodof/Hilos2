@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+
+    <TextView
+        android:id="@+id/resultado_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sin procesar"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/boton_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Realizar Proceso" />
+
+    <ImageView
+        android:id="@+id/imagen_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/boton_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descargar Imagen" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="DATOS DEL SERVICIO"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/resultado_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sin iniciar "
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/boton_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Obtener Datos" />
+</LinearLayout>
