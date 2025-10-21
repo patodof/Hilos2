@@ -1,5 +1,7 @@
 package com.example.hilos;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,5 +72,30 @@ public class MainActivity extends AppCompatActivity {
                 );
             }
         });
+
+        //BOTON 2
+        boton_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Crear Hilo
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //CODIGO DEL HILO
+                        try {
+                            URL url_imagen = new URL("https://img2.rtve.es/i/?w=1600&i=1614352806474.png");
+                            Bitmap imagen_bm = BitmapFactory.decodeStream(url_imagen.openConnection().getInputStream());
+                            imagen_2.setImageBitmap(imagen_bm);
+
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                    }
+                });
+            }
+        });
+
+        //BOTON 3
     }
 }
