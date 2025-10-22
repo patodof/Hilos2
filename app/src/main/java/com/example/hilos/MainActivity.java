@@ -3,6 +3,7 @@ package com.example.hilos;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //IMPORTANTE PARA TRABAJAR CON HILOS
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         //elementos de la UI
         TextView resultado_1 = findViewById(R.id.resultado_1) ;
@@ -83,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         //CODIGO DEL HILO
                         try {
-                            URL url_imagen = new URL("https://img2.rtve.es/i/?w=1600&i=1614352806474.png");
+                            URL url_imagen = new URL("https://i.blogs.es/a19bfc/testing/1024_2000.webp");
                             Bitmap imagen_bm = BitmapFactory.decodeStream(url_imagen.openConnection().getInputStream());
                             imagen_2.setImageBitmap(imagen_bm);
 
