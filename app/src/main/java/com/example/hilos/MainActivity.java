@@ -1,7 +1,10 @@
 package com.example.hilos;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
@@ -101,6 +104,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //BOTON 3
+        //BOTON 3 SERVICIOS
+
+        //Uso de Sensores
+        SensorManager sensorManager;
+        Sensor sensor;
+
+        //Obtener Rotacion del sesor
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+
+
+
     }
 }
